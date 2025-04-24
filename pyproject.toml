@@ -1,0 +1,31 @@
+[project]
+name = "maia"
+version = "1.0.0"
+description = ""
+authors = [
+    {name = "Sebastian Hörl",email = "sebastian.horl@irt-systemx.fr"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.12,<4.0"
+dependencies = [
+    "snakemake (>=9.1.6,<10.0.0)",
+    "jupyter (>=1.1.1,<2.0.0)",
+    "pandas (>=2.2.3,<3.0.0)",
+    "plotly (>=6.0.1,<7.0.0)",
+    "pyarrow (>=19.0.1,<20.0.0)",
+    "geopandas (>=1.0.1,<2.0.0)",
+    "py7zr (>=0.22.0,<0.23.0)",
+    "joblib (>=1.4.2,<2.0.0)",
+    "osmium (>=4.0.2,<5.0.0)",
+    "tqdm (>=4.67.1,<5.0.0)",
+    "openpyxl (>=3.1.5,<4.0.0)",
+    "scipy (>=1.15.2,<2.0.0)",
+    "numpy (>=2.2.4,<3.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+package-mode = false

@@ -1,0 +1,47 @@
+# Airport name
+name: "ory"
+
+# Airport location
+location: 
+  coordinates: [653651.4670364399,6848053.229326047]
+  crs: "EPSG:2154"
+
+# Overall total passengers
+passengers: 22878
+
+# Departures / arrivals per 24 hours
+temporal: [
+  0.0, 0.0, 0.0, 0.0, 0.0,
+  0.0, 0.03499486, 0.04499702, 0.05749971, 0.06500133,
+  0.07000241, 0.07000241, 0.06750187, 0.06500133, 0.06500133,
+  0.06500133, 0.06500133, 0.06250079, 0.06000025, 0.05499917,
+  0.05249864, 0.0499981, 0.0499981, 0.0   
+]
+
+# Existing profiles
+profiles:
+  leisure:
+    share: 0.7
+    group_size: # Poisson distribution with upper bound
+      mean: 2.0
+      upper: 5.0
+    temporal: # Gaussian mixture for departure times (in hours)
+      - { "mean": 12, "std": 6 }
+
+  business:
+    share: 0.25
+    group_size:
+      mean: 1.2
+      upper: 5.0
+    temporal:
+      - { "mean": 9, "std": 2 }
+      - { "mean": 17, "std": 2 }
+
+  premium:
+    share: 0.05
+    group_size:
+      mean: 1.2
+      upper: 3.0
+    temporal:
+      - { "mean": 9, "std": 2 }
+      - { "mean": 17, "std": 2 }
