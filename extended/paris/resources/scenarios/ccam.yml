@@ -1,0 +1,41 @@
+# Applied to freeflow travel time
+congestion_factor: 1.6
+
+# Modes from which travellers can choose
+choice: ["car", "transit", "ccam"]
+
+# Mode-specific parameters
+modes:
+  car:
+    cost_per_km: 0.32
+
+  transit:
+    cost_per_person: 5.0
+
+  taxi:
+    cost_per_km: 1.0
+    cost_per_trip: 5.0
+    wait_time_min: 5.0
+    vwts_factor: 1.5 # increases VWTS for taxi
+
+  ccam:
+    cost_per_km: 0.32
+    cost_per_trip: 5.0
+    wait_time_min: 5.0
+    vwts_factor: 1.5 # increases VWTS for CCAM
+
+# Mode choice model (Quinet et al., 2015)
+model:
+  wait_time_factor: 1.5 
+  walk_time_factor: 2.0
+
+  vtts:
+    leisure: 11.2
+    business: 36.2
+    premium: 36.2
+
+# Calibration targets
+calibration:
+  car: 0.5
+  transit: 0.3
+  taxi: 0.2

@@ -1,0 +1,26 @@
+profiles:
+  economy:
+    poolable: True
+    detour_factor: 2.0
+    maximum_wait_time: 1800.0 # 30 minutes
+    prebooking_time: 14400.0 # 4 hours
+    interaction_time: # in seconds
+      distribution: normal
+      mean: 300 # 5 minutes
+      std: 60 # 1 minute
+    group_size:
+      distribution: poisson
+      mean: 1.3
+
+  business:
+    poolable: True
+    detour_factor: 1.3
+    maximum_wait_time: 900.0 # 15 minutes
+    prebooking_time: 7200.0 # 2 hours
+    interaction_time: # in seconds
+      distribution: normal
+      mean: 60 # 1 minute
+      std: 30 # 30 seconds   
+    group_size:
+      distribution: poisson
+      mean: 1.8

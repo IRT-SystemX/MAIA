@@ -1,0 +1,46 @@
+# Airport name
+name: "cdg"
+
+# Airport location
+location: 
+  coordinates: [667628.2051898823, 6878828.97114245]
+  crs: "EPSG:2154"
+
+# Overall total passengers
+passengers: 13888
+
+# Departures / arrivals per 24 hours
+temporal: [
+  0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 
+  0.03349562, 0.0483841, 0.05707478, 0.06451902, 0.06699813, 0.06947725, 
+  0.06947725, 0.06699813, 0.06451902, 0.06079346, 0.05831434, 0.05582833, 
+  0.05458878, 0.05334922, 0.05210966, 0.04714454, 0.04218631, 0.03474207
+]
+
+# Existing profiles
+profiles:
+  leisure:
+    share: 0.7
+    group_size: # Poisson distribution with upper bound
+      mean: 2.0
+      upper: 5.0
+    temporal: # Gaussian mixture for departure times (in hours)
+      - { "mean": 12, "std": 6 }
+
+  business:
+    share: 0.25
+    group_size:
+      mean: 1.2
+      upper: 5.0
+    temporal:
+      - { "mean": 9, "std": 2 }
+      - { "mean": 17, "std": 2 }
+
+  premium:
+    share: 0.05
+    group_size:
+      mean: 1.2
+      upper: 3.0
+    temporal:
+      - { "mean": 9, "std": 2 }
+      - { "mean": 17, "std": 2 }
